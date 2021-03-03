@@ -31,7 +31,9 @@
                 </div>
     <!-- ASSIGNMENT TASK 3 START -->
                 <div class="col-md-4 col-xl-2 mt-4">
-                    <a href="#reserveForm" class="btn btn-info-lg text-light bg-info text-nowrap" role="button">Reserve Campsite</a>
+                    <!-- ADD TOOLTIP -->
+                    <a href="#reserveForm" class="btn btn-info-lg text-light bg-info text-nowrap" role="button" data-toggle="tooltip" data-html="true" data-placement="bottom" title="Or call us at <br/><strong>1-206-555-1234</strong>">Reserve Campsite</a>
+                    
                 </div>
                 
             </div>
@@ -189,6 +191,13 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- ADD TOOLTIP SCRIPT-->
+    <script>
+        $(function(){
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
 
 </body>
 </html>
