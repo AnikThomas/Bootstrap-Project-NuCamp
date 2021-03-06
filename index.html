@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./styles.css"/>
     
 
-    <title>NuCamp: A Better Way To Camp</title>
+    <title>NuCamp: A Better Way To Camp </title>
    
 </head>
 <body>
@@ -29,16 +29,85 @@
                     <h1>NuCamp</h1>
                      <h2>a better way to camp</h2>
                 </div>
-    <!-- ASSIGNMENT TASK 3 START -->
+    <!-- ASSIGNMENT TASK-3 WEEKS-2 START -->
                 <div class="col-md-4 col-xl-2 mt-4">
+
                     <!-- ADD TOOLTIPS -->
-                    <a href="#reserveForm" class="btn btn-info-lg text-light bg-info text-nowrap" role="button" data-toggle="tooltip" data-html="true" data-placement="bottom" title="Or call us at <br/><strong>1-206-555-1234</strong>">Reserve Campsite</a>
+                    <!-- TASK-1 WEEKS-3 REMOVE 4 ATTRIBUTES THAT SUPPORT THE TOOLTIPS: AND REMOVE THE HREF ATTRIBUTE OF THE BUTTON, ADD THE CORRECT DATA-* ATTRIBUTES TO ACTIVATE A MODAL-->
+                    <a class="btn btn-info-lg text-light bg-info text-nowrap" role="button" data-toggle="modal" data-target="#reserveModal">Reserve Campsite</a>
+                    <!-- <a href="#reserveForm" class="btn btn-info-lg text-light bg-info text-nowrap" role="button" data-toggle="tooltip" data-html="true" data-placement="bottom" title="Or call us at" ></a><br/><strong>1-206-555-1234</strong> Reserve Campsite </a> -->
                     
                 </div>
                 
             </div>
         </div>
     </header>
+
+    
+ <!-- TASK-2 WEEKS-3 CREATE LOGIN MODAL COMPONENT- START -->   
+    <div id="reserveModal" class="modal fade" role="dialog">
+        <div class="modal-lg modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-info text-white">
+                    <h3 class="modal-title">Reserve a Campsite</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <form id="reserveForm">
+                            <div class="row form-group">
+                                    <label for="numCampers" class="col-sm-6 col-form-label">Number of Campers</label>
+                                    <div class="col">
+                                        <select name="numCampers" class="form-control" id="numCampers">
+                                            <option>Select...</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                        </select>
+                                    </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="date" class="col-sm-6 col-form-label">Date</label>
+                                <div class="col">
+                                    <input class="form-control" type="date" name="date" id="date" placeholder="date">
+                                </div>
+                            </div> 
+
+                            <!-- TASK-2 WEEKS-3 ADD RADIO BUTTON GROUP RESERVATION FORM INSIDE THE MODAL TO ALLOW THE USER TO SELECT BETWEEN TENT AND RV CAMPSITE -->
+                            <div class="form-group row">
+                                <label class="col-sm-6 col-form-label">Campsite Type</label>
+                                
+                                    <div class="col-2 btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-success active">
+                                             <input class="form-control" type="radio" name="siteType" id="siteTent" value="tent" autocomplete="off" checked/>Tent
+                                        </label>
+
+                                        <label class="btn btn-primary">
+                                            <input class="form-control" type="radio" name="siteType" id="siteRV" value="RV" autocomplete="off"/>RV
+                                        </label>
+                                
+                                    </div>
+                                
+                            </div>
+                        </form>
+                        <div class="row">
+                            <div class="col">
+                                <!-- TASK-2 WEEKS-3 ADD CANCEL BUTTON -->
+                                <button type="submit" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Add responsive navbar -->
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
@@ -48,14 +117,14 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             
-            <div class="collapse navbar-collapse id="nucampNavbar">
+            <div class="collapse navbar-collapse" id="nucampNavbar">
                 <ul class="navbar-nav">
                     <li class="nav-item active"><a class="nav-link" href="#"><i class="fa fa-home fa-lg"></i>Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="aboutus.html"><i class="fa fa-info fa-lg"></i>About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-list fa-lg"></i>Sites</a></li>
                     <li class="nav-item"><a class="nav-link" href="contactus.html"><i class="fa fa-address-card fa-lg"></i>Contact</a></li>
                 </ul>
-                <!-- MODALS -->
+                <!-- MODAL -->
                 <span class="navbar-text ml-auto">
                     <a role="button" data-toggle="modal" data-target="#loginModal">
                         <i class="fa fa-sign-in"></i>Login
@@ -205,8 +274,8 @@
             </div>
         </div>
 
-        <!-- TASK 2 POSITION ADD FORM-->
-    <div class="row row-content">
+        <!-- TASK 2 POSITION ADD FORM DELETE  -->
+    <!-- <div class="row row-content">
             <div class="col-sm-6 mx-auto">
                 <div class="card">
                     <h3 class="card-header text-light bg-info">Reserve a Campsite</h3>
@@ -226,20 +295,20 @@
                                         </select>
                                     </div>
                             </div>
-                            <div class="row">
-                                <label for="date" class="col-sm-3 col-form-label">Date</label>
+                            <div class="form-group row">
+                                <label for="date" class="col-3 col-form-label">Date</label>
                                 <div class="col">
                                     <input class="form-control" type="date" name="date" id="date" placeholder="date">
                                 </div>
-                            </div>
-                            <!-- ========================== -->
-                        
-                        <div class="row">
-                            <div class="col">
-                                <button type="submit" class="btn btn-primary">Search</button>
-                            </div>
+                            </div> 
+                    </form> -->
+                    <!-- <div class="row">
+                        <div class="col">
+                            <button type="submit" class="btn btn-primary">Search</button>
                         </div>
-                    </form>
+                    </div> -->
+
+
                 </div>
     
             </div>
@@ -288,11 +357,12 @@
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- ADD TOOLTIPS SCRIPT-->
-    <script>
+    <!-- TASK-1 WEEKS-3 REMOVE JS SCRIPT TO SUPPORT TOOLTIPS-->
+    <!-- <script>
         $(function(){
             $('[data-toggle="tooltip"]').tooltip()
         })
-    </script>
+    </script> -->
 
 </body>
 </html>
