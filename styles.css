@@ -51,3 +51,12 @@ a, a:hover{
 .carousel {
     border: solid #5637DD;
 }
+
+/* CAROUSEL BUTTON */
+#carouselButton {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 100; 
+    /* Z-index overlay the button on top of the image */
+}
