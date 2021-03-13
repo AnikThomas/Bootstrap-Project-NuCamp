@@ -12,3 +12,19 @@ $(function() {
         }
     });
 });
+
+// / when #reserveButton is clicked it will open the #reserveModal
+$(function(){
+    $('#reserveButton').click(function(){
+       $('#reserveModal').modal('show');
+       //alert('hello')
+    });
+});
+
+// When loginBotton is clicked will open the #loginModal (signIn)
+$(function(){
+    $('#loginButton').click(function(){
+       $('#loginModal').modal('show');
+       //alert('hello')
+    });
+});
